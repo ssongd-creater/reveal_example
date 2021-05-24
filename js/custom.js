@@ -130,5 +130,6 @@ $(function(){
     $('.filter-menu li').removeClass("active");
     $(this).addClass("active");
   });
-
+  //VenoBox lightbox(modal box) Plugin Code
+  $('.venobox').venobox(); 
 });
