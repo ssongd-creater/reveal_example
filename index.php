@@ -330,6 +330,7 @@
     </section>
     <!-- End of Portfolio Section Area -->
 
+    <!-- Contact Section Area -->
     <section id="contact" class="section">
       <div class="center">
         <div class="section-title">
@@ -364,6 +365,53 @@
           </form>
         </div>
       </div>
+    </section>
+    <!-- End of Contact Section Area -->
+
+    <section id="recieved" class="section">
+      <div class="center">
+        <div class="section-title">
+          <h2>Messages Recieved</h2>
+          <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
+            Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the
+            Renaissance.</p>
+        </div>
+
+        <ul class="msg-table">
+        <li class="msg-tit">
+          <span>글쓴이</span>
+          <span>이메일</span>
+          <span>제목</span>
+          <span>등록일</span>
+        </li>
+        <?php
+          include_once $_SERVER['DOCUMENT_ROOT']."/reveal/php/connect.php"; //$db_conn을 활용할수있다
+          $sql = "SELECT*FROM re_message ORDER BY RE_idx DESC"; //order by로 re_idx값을 기준으로 DESC는 역순으로
+
+          $msg_result = mysqli_query($db_conn, $sql);
+          
+          while($row = mysqli_fetch_array($msg_result)){
+            $name = $row['RE_name'];
+            $email = $row['RE_email'];
+            $subject = $row['RE_subject'];
+            $msg = $row['RE_msg'];
+            $regist = $row['RE_reg']
+            //echo $name; //echo는 문자열만 찍어주는거
+        ?>
+
+        <li class="msg-con">
+          <span><?=$name?></span>
+          <span><?=$email?></span>
+          <span><?=$subject?></span>
+          <span><?=$regist?></span>
+        </li>
+        <?php
+            }
+        ?>
+      </ul>
+      </div>
+
+      
     </section>
     <footer>
       <p>Project Mong Design All Right Reserved.</p>
