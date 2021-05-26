@@ -395,7 +395,7 @@
             $email = $row['RE_email'];
             $subject = $row['RE_subject'];
             $msg = $row['RE_msg'];
-            $regist = $row['RE_reg']
+            $regist = $row['RE_reg'];
             //echo $name; //echo는 문자열만 찍어주는거
         ?>
 
